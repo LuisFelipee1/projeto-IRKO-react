@@ -1,7 +1,7 @@
 {
     "products": [
       { "id": 1, "name": "Camisas do Corinthians", "price": 350, "imageUrl": "https;//www.google.com" },
-      { "id": 2, "name": "Camisas do Santoa", "price": 300, "imageUrl": "https;//www.google.com" },
+      { "id": 2, "name": "Camisas do Santos", "price": 300, "imageUrl": "https;//www.google.com" },
       { "id": 3, "name": "Camisas do Palmeiras", "price": 280, "imageUrl": "https;//www.google.com" },
       { "id": 4, "name": "Camisas do São Paulo", "price": 290, "imageUrl": "https;//www.google.com" }
     ]
