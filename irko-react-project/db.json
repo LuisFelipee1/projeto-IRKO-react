@@ -1,9 +1,25 @@
 {
-    "products": [
-      { "id": 1, "name": "Camisas do Corinthians", "price": 350, "imageUrl": "https;//www.google.com" },
-      { "id": 2, "name": "Camisas do Santos", "price": 300, "imageUrl": "https;//www.google.com" },
-      { "id": 3, "name": "Camisas do Palmeiras", "price": 280, "imageUrl": "https;//www.google.com" },
-      { "id": 4, "name": "Camisas do São Paulo", "price": 290, "imageUrl": "https;//www.google.com" }
-    ]
-  }
-  
+  "products": [
+    {
+      "id": "1",
+      "name": "Camisas Corinthians",
+      "description": "corinthians",
+      "price": 299,
+      "imageUrl": "aaaaaaaaaa"
+    },
+    {
+      "id": "9970",
+      "name": "Camisas do Mirassol",
+      "price": 299,
+      "description": "Mirassol",
+      "imageUrl": "https://www.google.com"
+    },
+    {
+      "id": "522",
+      "name": "Camisas Palmeiras",
+      "price": 290,
+      "description": "Palmeiras",
+      "imageUrl": "https://www.example.com"
+    }
+  ]
+}

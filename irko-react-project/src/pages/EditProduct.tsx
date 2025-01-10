@@ -1,21 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Product from '../interface/type';
 
 const EditProduct: React.FC = () => {
-  const { id } = useParams<{ id: string }>(); // Tipagem para o parâmetro id
+  const { id } = useParams<string>();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState<number | string>('');
+  const [imageUrl, setImageUrl] = useState<string>('');
 
-  useEffect(() => {
-    // Aqui você pode buscar o produto pelo ID para editar
-    console.log(`Editando o produto com ID: ${id}`);
-  }, [id]);
+  const editProduct = async () => {
+
+    const updatedProduct: Product = {
+      id,
+      name,
+      description,
+      price: parseFloat(price as string),
+      imageUrl,
+    };
+
+    await fetch(`http://localhost:3001/products/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedProduct),
+    });
+    console.log("Product Updated:", updatedProduct);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode implementar a lógica para salvar as alterações do produto
-    console.log({ name, description, price });
+    editProduct();
   };
 
   return (
@@ -44,6 +60,14 @@ const EditProduct: React.FC = () => {
             type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
+        <label>
+          url da imagem:
+          <input
+            type="text"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
         <button type="submit">Salvar Alterações</button>
