@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
+import Swal from 'sweetalert2';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -27,6 +28,28 @@ const Home: React.FC = () => {
     }
   };
 
+  const animation = (e: React.FormEvent, id: string) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Tem certeza que deseja excluir esse produto ?",
+      text: "Você não pode reverter isso!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sim, Excluir!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: "Deletado !",
+          text: "Seu produto foi deletado com sucesso.",
+          icon: "success"
+        });
+        deleteProduct(id);
+      }
+    });
+  };
+
   return (
     <div>
       <h1>Lista de Produtos</h1>
@@ -36,7 +59,7 @@ const Home: React.FC = () => {
           <li key={product.id}>
             {product.name} - {product.price}
             <button onClick={() => navigate(`/edit-product/${product.id}`)}>Editar</button>
-            <button onClick={() => deleteProduct(product.id)}>Excluir</button>
+            <button onClick={(event) => animation(event, product.id)}>Excluir</button>
           </li>
         ))}
       </ul>

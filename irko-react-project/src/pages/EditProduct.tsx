@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Product from '../interface/type';
+import Swal from 'sweetalert2';
 
 const EditProduct: React.FC = () => {
   const { id } = useParams<string>();
@@ -26,18 +27,40 @@ const EditProduct: React.FC = () => {
       },
       body: JSON.stringify(updatedProduct),
     });
+
+    setName('');
+    setDescription('');
+    setPrice('');
+    setImageUrl('');
     console.log("Product Updated:", updatedProduct);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    editProduct();
+  const handleSubmit = async () => {
+    await editProduct();
+    Swal.fire("Prontinho, alterações salvas!", "", "success");
   };
+
+  const animation = (e: React.FormEvent) => {
+    e.preventDefault();
+    Swal.fire({
+      title: "Você deseja salvar as alterações?",
+      showDenyButton: true,
+      showCancelButton: true,
+      confirmButtonText: "Salvar",
+      denyButtonText: `Não salvar`,
+    }).then((result) => {
+      if (result.isConfirmed) {
+        handleSubmit();
+      } else if (result.isDenied) {
+        Swal.fire("Alterações não salvas", "", "info");
+      }
+    });
+  }
 
   return (
     <div>
       <h1>Editar Produto {id}</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={animation}>
         <label>
           Nome:
           <input

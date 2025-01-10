@@ -1,25 +1,18 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "Camisas Corinthians",
-      "description": "corinthians",
+      "id": "195",
+      "name": "Camisas do corinthians",
       "price": 299,
-      "imageUrl": "aaaaaaaaaa"
+      "description": "camisas",
+      "imageUrl": "url"
     },
     {
-      "id": "9970",
-      "name": "Camisas do Mirassol",
-      "price": 299,
-      "description": "Mirassol",
-      "imageUrl": "https://www.google.com"
-    },
-    {
-      "id": "522",
-      "name": "Camisas Palmeiras",
-      "price": 290,
-      "description": "Palmeiras",
-      "imageUrl": "https://www.example.com"
+      "id": "2881",
+      "name": "Camisas Real Madrid",
+      "price": 599,
+      "description": "hala madrid",
+      "imageUrl": "kaaaaaaaaaaaaaaaaa"
     }
   ]
 }

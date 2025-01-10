@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Product from '../interface/type';
+import Swal from 'sweetalert2';
+import gif from '../assets/gifs/meebo-smurfs.mp4';
 
 const AddProduct: React.FC = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
+  const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState<number | string>('');
 
   const fetchProducts = async () => {
@@ -24,15 +27,13 @@ const AddProduct: React.FC = () => {
     fetchProducts();
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
+  const handleSubmit = async () => {
     const newProduct: Product = {
       id: (Math.floor(Math.random() * 10000) + 1).toString(),
       name,
       price: parseFloat(price as string),
       description,
-      imageUrl: 'https://www.example.com',
+      imageUrl,
     };
 
     try {
@@ -54,15 +55,34 @@ const AddProduct: React.FC = () => {
       setName('');
       setDescription('');
       setPrice('');
+      setImageUrl('');
     } catch (error) {
       console.error(error);
     }
   };
 
+  const animation = (e: React.FormEvent) => { 
+    e.preventDefault();
+    Swal.fire({
+      title: "Produto adicionado com sucesso .",
+      width: 600,
+      padding: "3em",
+      color: "#716add",
+      background: "#fff url(/images/trees.png)",
+      backdrop: `
+        rgba(0,0,123,0.4)
+        url("../assets/gifs/meebo-smurfs.mp4")  
+        left top
+        no-repeat
+      `
+    });
+    handleSubmit();
+  }
+
   return (
     <div>
       <h1>Adicionar Produto</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={animation}>
         <label>
           Nome:
           <input
@@ -85,6 +105,14 @@ const AddProduct: React.FC = () => {
             type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+          />
+        </label>
+        <label>
+          Url Imagem:
+          <input
+            type="text"
+            value={imageUrl}
+            onChange={(e) => setImageUrl(e.target.value)}
           />
         </label>
         <button type="submit">Salvar</button>
