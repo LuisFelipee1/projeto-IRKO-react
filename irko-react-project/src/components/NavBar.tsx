@@ -1,13 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
+  const Navigate = useNavigate();
+
   return (
-    <nav>
-      <ul>
-        <li><Link to="/">Lista de Produtos</Link></li>
-        <li><Link to="/add-product">Adicionar Produto</Link></li>
-      </ul>
+    <nav className='text-center'>
+      <button onClick={() => Navigate('/')}>Lista de Produtos</button>
+      <button onClick={() => Navigate('/add-product')}>Adicionar Produto</button>
     </nav>
   );
 }

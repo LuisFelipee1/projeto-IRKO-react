@@ -1,0 +1,51 @@
+.image {
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.card-shirt {
+    border: solid 1px black;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    flex-basis: 200;
+}
+
+.container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-shirt:hover {
+    box-shadow: 0 0 5px black;
+}
+
+.btn-edit {
+    border-radius: 7px;
+    background-color: transparent;
+    border: solid 1px black;
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.btn-excluir {
+    border-radius: 7px;
+    background-color: transparent;
+    border: solid 1px rgb(5, 5, 5);
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    transition: 0.5s;
+}
+
+.btn-excluir:hover {
+    background-color: black;
+    color: rgb(255, 0, 0);
+}
+
+.btn-edit:hover {
+    background-color: black;
+    color: white;
+}

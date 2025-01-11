@@ -2,17 +2,45 @@
   "products": [
     {
       "id": "195",
-      "name": "Camisas do corinthians",
+      "name": "Camisa Crorinthians",
+      "description": " Camisa Confortável",
       "price": 299,
-      "description": "camisas",
-      "imageUrl": "url"
+      "imageUrl": "https://acdn.mitiendanube.com/stores/003/675/491/products/510315ab-bd0784956389a529b217284959529473-640-0.jpeg"
     },
     {
       "id": "2881",
-      "name": "Camisas Real Madrid",
-      "price": 599,
-      "description": "hala madrid",
-      "imageUrl": "kaaaaaaaaaaaaaaaaa"
+      "name": "Camisa Real Madrid",
+      "description": "Hala Madrid",
+      "price": 499,
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/223/825/products/real-madrid-i-play-2024-2025-1-8021240c3ff856f5c817174368895295-1024-1024.jpeg"
+    },
+    {
+      "id": "9190",
+      "name": "Camisa Palmeiras",
+      "price": 299,
+      "description": "Palmeiras",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/436/693/products/09c61514-6bdaa1ec1f6e81a9e517096519102291-1024-1024.jpeg"
+    },
+    {
+      "id": "9321",
+      "name": "Camisa Barcelona",
+      "price": 499,
+      "description": "Barcelona",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/055/309/products/camisa-barcelona-2023-2024-home-1-jogador-nike-masculina-azul-vermelho-original-oficial-comprar-confiavel-loja-51-96e65530e7e4e6372416836541107843-480-0.jpeg"
+    },
+    {
+      "id": "9516",
+      "name": "Camisa São Paulo",
+      "price": 299,
+      "description": "São Paulo",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/002/066/468/products/captura-de-tela-2024-03-26-203601-95b151daaf8318bbb117114962569309-640-0.png"
+    },
+    {
+      "id": "7961",
+      "name": "Camisa Flamengo",
+      "price": 299,
+      "description": "flamengo",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/223/825/products/flamengo-i-2024-2025-feminina-1-5fce23d24abf464ecd17093906031067-1024-1024.png"
     }
   ]
 }

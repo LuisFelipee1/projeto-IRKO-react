@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import db from '../../db.json';
 import Swal from 'sweetalert2';
+import Navbar from '../components/NavBar';
+import '../styles/home.css';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -52,17 +54,19 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <h1>Lista de Produtos</h1>
-      <button onClick={() => navigate('/add-product')}>Adicionar Produto</button>
-      <ul>
+      <h1 className='m-5 text-center'>Lista de Produtos</h1>
+      <Navbar />
+      <div className='container m-5 text-center'>
         {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - {product.price}
-            <button onClick={() => navigate(`/edit-product/${product.id}`)}>Editar</button>
-            <button onClick={(event) => animation(event, product.id)}>Excluir</button>
-          </li>
+          <div key={product.id} className='justify-content-center card-shirt m-3'>
+            <img src={product.imageUrl} alt={product.id} className='image'/>
+            <div className='fw-bold m-1'>{product.name}</div>
+            <div className='m-1'>R$ {product.price},00</div>
+            <button className='m-1 btn-edit' onClick={() => navigate(`/edit-product/${product.id}`)}>Editar</button>
+            <button className='m-1 btn-excluir' onClick={(event) => animation(event, product.id)}>Excluir</button>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
