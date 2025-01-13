@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Product from '../interface/type';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
+import '../styles/addProduct.css';
 
 const AddProduct: React.FC = () => {
   const navigate = useNavigate();
@@ -75,19 +76,15 @@ const AddProduct: React.FC = () => {
     try {
       await handleSubmit();
       navigate('/');
+      window.location.reload();
 
       Swal.fire({
-        title: "Produto adicionado com sucesso .",
-        width: 600,
-        padding: "3em",
-        color: "#716add",
-        background: "#fff url(/images/trees.png)",
-        backdrop: `
-          rgba(0,0,123,0.4)
-          url("../assets/gifs/meebo-smurfs.mp4")  
-          left top
-          no-repeat
-        `
+        title: "Pronto!",
+        text: "Produto Adicionado com Sucesso!",
+        imageUrl: "https://www.conjur.com.br/img/b/emoji-joinha.jpeg",
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: "Custom image"
       });
     } catch (error) {
       console.error("erro: ", error);
@@ -95,48 +92,66 @@ const AddProduct: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className='all-body'>
+      <button 
+        className='btn-voltar' 
+        onClick={() => navigate('/')}
+      >
+        Voltar
+      </button>
+      <form className='form-add' onSubmit={animation}>
       <h1>Adicionar Produto</h1>
-      <form onSubmit={animation}>
         <label>
           Nome:
+          <br />
           <input
             type="text"
+            className='input-add'
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          <br />
           {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <label>
           Descrição:
+          <br />
           <input 
+            className='input-add'
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+          <br />
           {validated && !description && <span>Por favor, insira uma descrição.</span>}
         </label>
         <label>
           Preço:
+          <br />
           <input
+            className='input-add'
             type="number"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
+          <br />
           {validated && !price && <span>Por favor, insira um preço.</span>}
         </label>
         <label>
           Url Imagem:
+          <br />
           <input
+            className='input-add'
             type="text"
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
+          <br />
           {validated && !imageUrl && <span>Por favor, insira uma url de imagem.</span>}
         </label>
-        <button type="submit">Salvar</button>
+        <br />
+        <button type="submit" className='btn-save-add'>Salvar</button>
       </form>
-
       <h2>Produtos Cadastrados</h2>
       <ul>
         {products.map((product) => (

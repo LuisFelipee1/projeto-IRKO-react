@@ -1,0 +1,72 @@
+.all-body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.form-add {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: azure;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+    gap: 10px;
+    margin: 0 35%;
+}
+
+.input-add {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+.btn-save-add {
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.9);
+    background-color: #1C1E21;
+    color: #fff;
+    transition: 1s;
+    margin: 10px;
+}
+
+.btn-save-add:hover {
+    background-image: url('../assets/gifs/ney.gif');
+    background-position: center;
+    color: #fff;
+}
+
+span {
+    color: red;
+}
+
+.btn-voltar {
+    position: fixed;
+    top: 10px; 
+    left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #000000;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer; 
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-voltar:hover {
+    background-color: #000000;
+    color: aliceblue;
+    transform: scale(1.05);
+  }
+  
+  .btn-voltar:active {
+    background-color: #000000;
+    transform: scale(0.95);
+  }

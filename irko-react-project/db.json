@@ -43,11 +43,39 @@
       "imageUrl": "https://sportbras.vtexassets.com/arquivos/ids/1169007/CAMISA-MASCULINA-ADIDAS-ATLETICO-MINEIRO-I-0.jpg?v=638622574873130000"
     },
     {
-      "id": "1615",
-      "name": "LALALA",
-      "price": 23,
-      "description": "AA",
-      "imageUrl": "https://sportbras.vtexassets.com/arquivos/ids/1169007/CAMISA-MASCULINA-ADIDAS-ATLETICO-MINEIRO-I-0.jpg?v=638622574873130000"
+      "id": "6285",
+      "name": "Camisa do PSG",
+      "price": 399,
+      "description": "Paris Saint Germain",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/402/723/products/98f2fcda1-ae0b574e68debf409a16859198038217-1024-1024.jpg"
+    },
+    {
+      "id": "2254",
+      "name": "Camisa da Juventus",
+      "price": 299,
+      "description": "Juventus da Itália",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/631/923/products/519d2fe91-e6b2c92fffcbbc180816853923725573-1024-1024.jpg"
+    },
+    {
+      "id": "5786",
+      "name": "Camisa do Fluminense",
+      "description": "fluminense",
+      "price": 299,
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/223/825/products/fluminense-i-2024-2025-com-patrocinios-3-293c3c232974a2c8e117141803813862-1024-1024.png"
+    },
+    {
+      "id": "3516",
+      "name": "Camisa do Napoli",
+      "price": 299,
+      "description": "Napoli Itália",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/402/723/products/507b4484-a1157697f5e790415c17229743403777-1024-1024.jpg"
+    },
+    {
+      "id": "2852",
+      "name": "Camisa do chelsea",
+      "description": "chelsea",
+      "price": 399,
+      "imageUrl": "https://n9sportlife.com.br/cdn/shop/files/87d6fb02_1200x.jpg?v=1721788808"
     }
   ]
 }

@@ -13,3 +13,14 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
 }
+
+/*quando a resolução for menor que 768px quero que o gif de fundo fique na vertical*/
+
+@media screen and (max-width: 768px) {
+    body {
+        background: url('assets/gifs/futebol.gif') no-repeat center center;
+        background-size: auto 100%;
+        background-attachment: fixed;
+        background-color: #000;
+    }
+}

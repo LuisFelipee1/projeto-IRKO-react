@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Product from '../interface/type';
 import Swal from 'sweetalert2';
+import '../styles/editProduct.css'
 
 const EditProduct: React.FC = () => {
   const navigate = useNavigate();
@@ -68,47 +69,73 @@ const EditProduct: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1>Editar Produto {id}</h1>
-      <form onSubmit={animation}>
-        <label>
-          Nome:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          {validated && !name && <span>Por favor, insira um nome.</span>}
-        </label>
-        <label>
-          Descrição:
-          <input
-            type="text"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-          />
-          {validated && !name && <span>Por favor, insira um nome.</span>}
-        </label>
-        <label>
-          Preço:
-          <input
-            type="number"
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-          />
-          {validated && !name && <span>Por favor, insira um nome.</span>}
-        </label>
-        <label>
-          url da imagem:
-          <input
-            type="text"
-            value={imageUrl}
-            onChange={(e) => setImageUrl(e.target.value)}
-          />
-          {validated && !name && <span>Por favor, insira um nome.</span>}
-        </label>
-        <button type="submit">Salvar Alterações</button>
-      </form>
+    <div className='all-body'>
+      <button 
+        className='btn-voltar' 
+        onClick={() => navigate('/')}
+      >
+        Voltar
+      </button>
+      <div className='form'>
+        <form onSubmit={animation}>
+        <h1>Editar Produto </h1>
+          <label>
+            Nome:
+            <br />
+            <input
+              className='input-edit'
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <br />
+            {validated && !name && <span>Por favor, insira um nome.</span>}
+          </label>
+          <label>
+            Descrição:
+            <br />
+            <input
+              className='input-edit'
+              type="text"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+            <br />
+            {validated && !name && <span>Por favor, insira uma descrição.</span>}
+          </label>
+          <label>
+            Preço:
+            <br />
+            <input
+              className='input-edit'
+              type="number"
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
+            />
+            <br />
+            {validated && !name && <span>Por favor, insira um valor.</span>}
+          </label>
+          <label>
+            url da imagem:
+            <br />
+            <input
+              className='input-edit'
+              type="text"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
+            <br />
+            {validated && !name && <span>Por favor, insira uma url válida.</span>}
+          </label>
+          <br />
+          <button 
+            type="submit" 
+            className='btn-save'
+          >
+            Salvar Alterações
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
