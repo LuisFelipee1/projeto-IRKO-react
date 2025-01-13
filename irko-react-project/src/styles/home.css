@@ -1,18 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Playwrite+FR+Moderne:wght@100..400&display=swap');
+
 .image {
     width: 250px;
-    height: 300px;
+    height: auto;
     border-radius: 10px;
 }
 
 .card-shirt {
+    flex: 1 1 calc(25% - 40px);
+    max-width: 250px;
+    box-sizing: border-box;
+    margin: 10px;
     border: solid 1px black;
     border-radius: 10px;
     transition: box-shadow 0.3s ease;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
     flex-basis: 200;
+    background-color: aliceblue;
 }
 
 .container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
     flex-wrap: wrap;
     display: flex;
     justify-content: center;
@@ -48,4 +61,28 @@
 .btn-edit:hover {
     background-color: black;
     color: white;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 100px;
+    font-family: "Jersey 15", serif;
+}
+
+/* .gif-futebol {
+    background-image: url('../assets/gifs/futebol.gif');
+    background-size: 100% 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+} */
+
+.container-tiltle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 100px;
+    font-family: "Jersey 15", serif;
+    font-style: normal;
 }

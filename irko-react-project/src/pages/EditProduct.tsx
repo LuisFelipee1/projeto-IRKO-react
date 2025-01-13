@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Product from '../interface/type';
 import Swal from 'sweetalert2';
 
 const EditProduct: React.FC = () => {
+  const navigate = useNavigate();
   const { id } = useParams<string>();
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [price, setPrice] = useState<number | string>('');
   const [imageUrl, setImageUrl] = useState<string>('');
+  const [validated, setValidated] = useState(false);
 
   const editProduct = async () => {
 
@@ -42,6 +44,13 @@ const EditProduct: React.FC = () => {
 
   const animation = (e: React.FormEvent) => {
     e.preventDefault();
+
+    
+    if (!name || !price || !description || !imageUrl) {
+      setValidated(true);
+      return;
+    }
+
     Swal.fire({
       title: "Você deseja salvar as alterações?",
       showDenyButton: true,
@@ -51,6 +60,7 @@ const EditProduct: React.FC = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         handleSubmit();
+        navigate('/');
       } else if (result.isDenied) {
         Swal.fire("Alterações não salvas", "", "info");
       }
@@ -68,6 +78,7 @@ const EditProduct: React.FC = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <label>
           Descrição:
@@ -76,6 +87,7 @@ const EditProduct: React.FC = () => {
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+          {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <label>
           Preço:
@@ -84,6 +96,7 @@ const EditProduct: React.FC = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
+          {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <label>
           url da imagem:
@@ -92,6 +105,7 @@ const EditProduct: React.FC = () => {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
+          {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <button type="submit">Salvar Alterações</button>
       </form>

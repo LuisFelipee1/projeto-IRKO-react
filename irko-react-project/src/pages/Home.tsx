@@ -53,15 +53,18 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div>
-      <h1 className='m-5 text-center'>Lista de Produtos</h1>
+    <div className='gif-futebol'>
+      <div className='container-tiltle'>
+        <h1 className='m-5 text-center title'>Lista de Produtos</h1>
+      </div>
       <Navbar />
-      <div className='container m-5 text-center'>
+      <div className='container text-center'>
         {products.map((product) => (
           <div key={product.id} className='justify-content-center card-shirt m-3'>
             <img src={product.imageUrl} alt={product.id} className='image'/>
             <div className='fw-bold m-1'>{product.name}</div>
             <div className='m-1'>R$ {product.price},00</div>
+            <div className='m-1'>{product.description}</div>
             <button className='m-1 btn-edit' onClick={() => navigate(`/edit-product/${product.id}`)}>Editar</button>
             <button className='m-1 btn-excluir' onClick={(event) => animation(event, product.id)}>Excluir</button>
           </div>

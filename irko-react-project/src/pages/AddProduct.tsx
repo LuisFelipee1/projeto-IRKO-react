@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import Product from '../interface/type';
 import Swal from 'sweetalert2';
-import gif from '../assets/gifs/meebo-smurfs.mp4';
+import { useNavigate } from 'react-router-dom';
 
 const AddProduct: React.FC = () => {
+  const navigate = useNavigate();
   const [products, setProducts] = useState<Product[]>([]);
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState('');
   const [price, setPrice] = useState<number | string>('');
+  const [validated, setValidated] = useState(false);
 
   const fetchProducts = async () => {
     try {
@@ -28,6 +30,7 @@ const AddProduct: React.FC = () => {
   }, []);
 
   const handleSubmit = async () => {
+
     const newProduct: Product = {
       id: (Math.floor(Math.random() * 10000) + 1).toString(),
       name,
@@ -61,22 +64,34 @@ const AddProduct: React.FC = () => {
     }
   };
 
-  const animation = (e: React.FormEvent) => { 
+  const animation = async (e: React.FormEvent) => { 
     e.preventDefault();
-    Swal.fire({
-      title: "Produto adicionado com sucesso .",
-      width: 600,
-      padding: "3em",
-      color: "#716add",
-      background: "#fff url(/images/trees.png)",
-      backdrop: `
-        rgba(0,0,123,0.4)
-        url("../assets/gifs/meebo-smurfs.mp4")  
-        left top
-        no-repeat
-      `
-    });
-    handleSubmit();
+
+    if (!name || !price || !description || !imageUrl) {
+      setValidated(true);
+      return;
+    }
+
+    try {
+      await handleSubmit();
+      navigate('/');
+
+      Swal.fire({
+        title: "Produto adicionado com sucesso .",
+        width: 600,
+        padding: "3em",
+        color: "#716add",
+        background: "#fff url(/images/trees.png)",
+        backdrop: `
+          rgba(0,0,123,0.4)
+          url("../assets/gifs/meebo-smurfs.mp4")  
+          left top
+          no-repeat
+        `
+      });
+    } catch (error) {
+      console.error("erro: ", error);
+    }
   }
 
   return (
@@ -90,14 +105,16 @@ const AddProduct: React.FC = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
+          {validated && !name && <span>Por favor, insira um nome.</span>}
         </label>
         <label>
           Descrição:
-          <input
+          <input 
             type="text"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
+          {validated && !description && <span>Por favor, insira uma descrição.</span>}
         </label>
         <label>
           Preço:
@@ -106,6 +123,7 @@ const AddProduct: React.FC = () => {
             value={price}
             onChange={(e) => setPrice(e.target.value)}
           />
+          {validated && !price && <span>Por favor, insira um preço.</span>}
         </label>
         <label>
           Url Imagem:
@@ -114,6 +132,7 @@ const AddProduct: React.FC = () => {
             value={imageUrl}
             onChange={(e) => setImageUrl(e.target.value)}
           />
+          {validated && !imageUrl && <span>Por favor, insira uma url de imagem.</span>}
         </label>
         <button type="submit">Salvar</button>
       </form>
