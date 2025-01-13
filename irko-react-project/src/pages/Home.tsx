@@ -65,8 +65,16 @@ const Home: React.FC = () => {
             <div className='fw-bold m-1'>{product.name}</div>
             <div className='m-1'>R$ {product.price},00</div>
             <div className='m-1'>{product.description}</div>
-            <button className='m-1 btn-edit' onClick={() => navigate(`/edit-product/${product.id}`)}>Editar</button>
-            <button className='m-1 btn-excluir' onClick={(event) => animation(event, product.id)}>Excluir</button>
+            <button 
+              className='m-1 btn-edit' 
+              onClick={() => navigate(`/edit-product/${product.id}`)}>
+                Editar
+            </button>
+            <button 
+              className='m-1 btn-excluir' 
+              onClick={(event) => animation(event, product.id)}>
+                Excluir
+            </button>
           </div>
         ))}
       </div>

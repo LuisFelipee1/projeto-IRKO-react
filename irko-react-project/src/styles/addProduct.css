@@ -13,7 +13,7 @@
     padding: 20px;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
     gap: 10px;
-    margin: 0 35%;
+    margin: 10px 35%;
 }
 
 .input-add {
@@ -70,3 +70,15 @@ span {
     background-color: #000000;
     transform: scale(0.95);
   }
+
+.registered-products {
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.9);
+    margin: 20px 0px;
+}
+
+ul {
+    overflow: auto;
+    height: 250px;
+}

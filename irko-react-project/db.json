@@ -1,13 +1,6 @@
 {
   "products": [
     {
-      "id": "195",
-      "name": "Camisa Crorinthians",
-      "description": " Camisa Confortável",
-      "price": 299,
-      "imageUrl": "https://acdn.mitiendanube.com/stores/003/675/491/products/510315ab-bd0784956389a529b217284959529473-640-0.jpeg"
-    },
-    {
       "id": "2881",
       "name": "Camisa Real Madrid",
       "description": "Hala Madrid",
@@ -34,13 +27,6 @@
       "price": 299,
       "description": "flamengo",
       "imageUrl": "https://acdn.mitiendanube.com/stores/001/223/825/products/flamengo-i-2024-2025-feminina-1-5fce23d24abf464ecd17093906031067-1024-1024.png"
-    },
-    {
-      "id": "4008",
-      "name": "Camisa do atlético mineiro",
-      "price": 200,
-      "description": "galo",
-      "imageUrl": "https://sportbras.vtexassets.com/arquivos/ids/1169007/CAMISA-MASCULINA-ADIDAS-ATLETICO-MINEIRO-I-0.jpg?v=638622574873130000"
     },
     {
       "id": "6285",
@@ -76,6 +62,20 @@
       "description": "chelsea",
       "price": 399,
       "imageUrl": "https://n9sportlife.com.br/cdn/shop/files/87d6fb02_1200x.jpg?v=1721788808"
+    },
+    {
+      "id": "8817",
+      "name": "Camisa Corinthians",
+      "description": "Corinthians",
+      "price": 299,
+      "imageUrl": "https://static.shoptimao.com.br/produtos/camisa-corinthians-i-2425-jogador-nike-masculina/28/JD8-9216-028/JD8-9216-028_zoom1.jpg?ts=1734693381"
+    },
+    {
+      "id": "7626",
+      "name": "Camisa Inter de milão",
+      "price": 299,
+      "description": "internazionale",
+      "imageUrl": "https://acdn.mitiendanube.com/stores/001/876/620/products/camisa-inter-internazionale-nerazzurri-milan-milano-milao-home-i-2023-2024-23-24-azul-preto-modelo-torcedor-fan-lautaro-martinez-carlos-augusto-alexis-sanchez-thuram-carlos-augusto-barella-pavard-somm-77e0c68fcc60bfe6b716988016952109-640-0.jpg"
     }
   ]
 }

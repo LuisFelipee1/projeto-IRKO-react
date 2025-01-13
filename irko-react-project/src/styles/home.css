@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Playwrite+FR+Moderne:wght@100..400&display=swap');
 
 .image {
-    width: 250px;
+    width: 248px;
     height: auto;
     border-radius: 10px;
 }
@@ -70,13 +70,6 @@
     font-size: 100px;
     font-family: "Jersey 15", serif;
 }
-
-/* .gif-futebol {
-    background-image: url('../assets/gifs/futebol.gif');
-    background-size: 100% 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-} */
 
 .container-tiltle {
     display: flex;

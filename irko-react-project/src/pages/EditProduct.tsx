@@ -62,6 +62,7 @@ const EditProduct: React.FC = () => {
       if (result.isConfirmed) {
         handleSubmit();
         navigate('/');
+        window.location.reload();
       } else if (result.isDenied) {
         Swal.fire("Alterações não salvas", "", "info");
       }

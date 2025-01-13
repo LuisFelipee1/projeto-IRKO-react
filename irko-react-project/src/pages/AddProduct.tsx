@@ -13,6 +13,17 @@ const AddProduct: React.FC = () => {
   const [price, setPrice] = useState<number | string>('');
   const [validated, setValidated] = useState(false);
 
+  useEffect(() => {
+    const savedProducts = localStorage.getItem('products');
+    if (savedProducts) {
+      setProducts(JSON.parse(savedProducts));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('products', JSON.stringify(products));
+  }, [products]);
+
   const fetchProducts = async () => {
     try {
       const response = await fetch('http://localhost:3001/products');
@@ -75,8 +86,6 @@ const AddProduct: React.FC = () => {
 
     try {
       await handleSubmit();
-      navigate('/');
-      window.location.reload();
 
       Swal.fire({
         title: "Pronto!",
@@ -86,6 +95,7 @@ const AddProduct: React.FC = () => {
         imageHeight: 200,
         imageAlt: "Custom image"
       });
+      navigate('/', { state: { updatedProducts: products } });
     } catch (error) {
       console.error("erro: ", error);
     }
@@ -152,14 +162,18 @@ const AddProduct: React.FC = () => {
         <br />
         <button type="submit" className='btn-save-add'>Salvar</button>
       </form>
-      <h2>Produtos Cadastrados</h2>
-      <ul>
-        {products.map((product) => (
-          <li key={product.id}>
-            {product.name} - R${product.price}
-          </li>
-        ))}
-      </ul>
+      <div className='registered-products'>
+        <div className='m-4'>
+          <h2>Produtos Cadastrados</h2>
+          <ul>
+            {products.map((product) => (
+              <li key={product.id}>
+                {product.name} - R${product.price}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
